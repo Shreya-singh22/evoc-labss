@@ -13,6 +13,7 @@ import {
   LifeBuoy,
   Sun
 } from 'lucide-react';
+import { getPath } from '@/lib/paths';
 
 export default function DashboardSidebar() {
   const navItems = [
@@ -35,7 +36,7 @@ export default function DashboardSidebar() {
       {/* Brand Block */}
       <div className="flex items-center gap-3 px-2 py-4 mb-6">
         <div className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center">
-          <img src="/logo.png" alt="" className="w-5 h-5 object-contain brightness-200 grayscale" />
+          <img src={getPath('/logo.png')} alt="" className="w-5 h-5 object-contain brightness-200 grayscale" />
         </div>
         <div className="flex-1 min-w-0">
           <div className="text-[14px] font-bold text-white leading-tight">Toys</div>

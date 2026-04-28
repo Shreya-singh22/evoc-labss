@@ -183,7 +183,7 @@ export default function EfficiencySlider() {
             {/* Handle */}
             <motion.div className="absolute top-0 bottom-0 z-20 w-[2px] bg-blue-500/30" style={{ left: handleLeft }}>
               <div onMouseDown={() => setIsDragging(true)} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-black border border-blue-500/40 shadow-[0_0_60px_rgba(59,130,246,0.5)] flex items-center justify-center cursor-grab active:cursor-grabbing">
-                <img src="/logo.png" alt="e" className="w-8 h-8 object-contain invert brightness-200" />
+                <img src={getPath('/logo.png')} alt="e" className="w-8 h-8 object-contain invert brightness-200" />
               </div>
             </motion.div>
 

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { getPath } from '@/lib/paths';
 
 const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -99,14 +100,14 @@ export default function FoundersSection() {
           <FounderCard 
             name="NISHANT RAJ" 
             role="founder and CEO"
-            image="/images/founders/nishant.jpg"
+            image={getPath('/images/founders/nishant.jpg')}
             linkedin="https://www.linkedin.com/in/nishant-raj-1ab9a9341/"
             twitter="https://x.com/nishantraj"
           />
           <FounderCard 
             name="PIYUSH RATHORE" 
             role="co-founder and CTO"
-            image="/images/founders/piyush.jpg"
+            image={getPath('/images/founders/piyush.jpg')}
             linkedin="https://www.linkedin.com/in/piyussshhh/"
             twitter="https://x.com/piyushrathore"
           />
