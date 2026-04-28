@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { getPath } from '@/lib/paths';
 
 // Replace missing Lucide brand icons with simple inline SVGs
 const SocialIcons = [
@@ -191,8 +192,13 @@ export default function FooterSection() {
           
           {/* Column 1: Brand */}
           <div className="space-y-6 max-w-[400px]">
-            <div className="text-4xl font-bold tracking-tighter" style={{ fontFamily: 'var(--font-playfair), serif' }}>
-              e
+            <div className="flex items-center">
+              <img
+                src={getPath('/logo.png')}
+                alt="Logo"
+                className="object-contain brightness-[3] grayscale"
+                style={{ width: '48px', height: '48px' }}
+              />
             </div>
             <p className="text-[14px] leading-[1.6]" style={{ color: 'rgba(255,255,255,0.75)' }}>
               Evoc Labs is an AI-powered platform that runs your entire e-commerce business—from store to ads to orders in one place.
