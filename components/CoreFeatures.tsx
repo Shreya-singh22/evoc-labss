@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { 
   Sparkles, 
   BarChart3, 
@@ -51,7 +51,7 @@ const features = [
   }
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -61,7 +61,7 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
     opacity: 1, 
@@ -121,7 +121,7 @@ export default function CoreFeatures() {
                 <div className="card-front flex items-center justify-center px-6 py-4">
                   <div className="relative z-10 flex items-center gap-4 text-left">
                     <div className="p-3 bg-[#183EEB]/10 rounded-xl border border-[#183EEB]/20 group-hover:bg-[#183EEB]/20 transition-colors duration-500 shrink-0 shadow-[0_0_15px_rgba(24,62,235,0.1)]">
-                      {React.cloneElement(feature.icon as React.ReactElement, { className: 'w-6 h-6 text-[#183EEB]' })}
+                      {React.cloneElement(feature.icon as React.ReactElement<any>, { className: 'w-6 h-6 text-[#183EEB]' })}
                     </div>
                     <h3 className="text-white text-base md:text-lg font-bold tracking-tighter uppercase leading-[1.1] max-w-[160px]">
                       {feature.title}
