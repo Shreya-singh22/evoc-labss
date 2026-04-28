@@ -40,7 +40,15 @@ const FounderCard = ({
     {/* Photo Area */}
     <div className="absolute inset-0 w-full h-full bg-black">
       {image ? (
-        <img src={image} alt={name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+        <img 
+          src={image} 
+          alt={name} 
+          loading="lazy"
+          decoding="async"
+          width={320}
+          height={400}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+        />
       ) : (
         <div className="w-full h-full flex items-center justify-center">
           <div className="w-16 h-16 border-2 border-white/5 rounded-full opacity-10" />

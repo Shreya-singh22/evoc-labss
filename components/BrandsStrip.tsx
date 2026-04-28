@@ -17,12 +17,12 @@ export default function BrandsStrip() {
       <div className="relative flex overflow-hidden group">
         <motion.div 
           className="flex whitespace-nowrap gap-12 md:gap-24"
-          animate={{ x: [0, -1920] }}
+          animate={{ x: ["0%", "-50%"] }}
           transition={{ 
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 40,
+              duration: 30,
               ease: "linear"
             }
           }}
@@ -36,7 +36,11 @@ export default function BrandsStrip() {
               <img 
                 src={logo} 
                 alt="Brand logo" 
+                loading="lazy"
+                decoding="async"
                 className="h-8 md:h-12 w-auto object-contain max-w-[120px] brightness-0 invert"
+                width={120}
+                height={48}
               />
             </div>
           ))}

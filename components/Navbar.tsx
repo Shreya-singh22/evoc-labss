@@ -39,6 +39,10 @@ export default function Navbar() {
               <img
                 src={getPath('/logo.png')}
                 alt="Logo"
+                loading="eager"
+                decoding="async"
+                width={56}
+                height={56}
                 className="object-contain brightness-[3] grayscale"
                 style={{ width: '56px', height: '56px' }}
               />

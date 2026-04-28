@@ -15,6 +15,8 @@ export default function Hero() {
           alt="" 
           className="w-full h-[85vh] object-cover opacity-100"
           style={{ objectPosition: 'center top' }}
+          fetchPriority="high"
+          loading="eager"
         />
         {/* Subtle vignette to maintain depth */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70" />
@@ -55,6 +57,8 @@ export default function Hero() {
       <img
         src={getPath('/logo.png')}
         alt=""
+        loading="lazy"
+        decoding="async"
         className="
           absolute pointer-events-none z-0
           top-0 left-0

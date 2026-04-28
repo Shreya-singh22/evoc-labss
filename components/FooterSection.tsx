@@ -196,6 +196,10 @@ export default function FooterSection() {
               <img
                 src={getPath('/logo.png')}
                 alt="Logo"
+                loading="lazy"
+                decoding="async"
+                width={48}
+                height={48}
                 className="object-contain brightness-[3] grayscale"
                 style={{ width: '48px', height: '48px' }}
               />
