@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { getPath } from '@/lib/paths';
 
 export default function DashboardMockup() {
   return (
@@ -21,7 +22,7 @@ export default function DashboardMockup() {
         <div className="relative bg-white rounded-[11px] md:rounded-[23px] overflow-hidden shadow-2xl">
           {/* Main Dashboard Image */}
           <img 
-            src="/dashboard-mockup.jpg" 
+            src={getPath('/dashboard-mockup.jpg')} 
             alt="Dashboard Mockup" 
             className="w-full h-auto block object-cover"
           />

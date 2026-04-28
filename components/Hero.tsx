@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { getPath } from '@/lib/paths';
 
 export default function Hero() {
   return (
@@ -10,7 +11,7 @@ export default function Hero() {
       {/* ─── Clean High-Fidelity Background Image ─── */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/hero-bg-clean.png" 
+          src={getPath('/hero-bg-clean.png')} 
           alt="" 
           className="w-full h-[85vh] object-cover opacity-100"
           style={{ objectPosition: 'center top' }}
@@ -52,7 +53,7 @@ export default function Hero() {
 
       {/* ... (Logo flourish kept as is) */}
       <img
-        src="/logo.png"
+        src={getPath('/logo.png')}
         alt=""
         className="
           absolute pointer-events-none z-0

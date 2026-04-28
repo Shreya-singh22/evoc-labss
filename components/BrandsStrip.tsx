@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { getPath } from '@/lib/paths';
 
-const brands = Array.from({ length: 17 }, (_, i) => `/brands/brand-${i + 1}.png`);
+const brands = Array.from({ length: 17 }, (_, i) => getPath(`/brands/brand-${i + 1}.png`));
 
 export default function BrandsStrip() {
   return (

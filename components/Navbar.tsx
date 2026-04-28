@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { ArrowRight } from 'lucide-react';
+import { getPath } from '@/lib/paths';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,7 +37,7 @@ export default function Navbar() {
           <div className="flex-1">
             <Link href="/" aria-label="Home" className="inline-block hover:opacity-80 transition-opacity outline-none focus:outline-none">
               <img
-                src="/logo.png"
+                src={getPath('/logo.png')}
                 alt="Logo"
                 className="object-contain brightness-[3] grayscale"
                 style={{ width: '56px', height: '56px' }}
