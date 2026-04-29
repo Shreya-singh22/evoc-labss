@@ -220,7 +220,7 @@ export default function FooterSection({ hideCTA = false }: { hideCTA?: boolean }
             <div>
               <h4 className="text-[14px] font-bold uppercase tracking-[0.1em] mb-[22px]" style={{ color: 'rgba(255,255,255,0.55)' }}>EVOC LABS</h4>
               <ul className="space-y-[14px]">
-                <li><Link href="/brands" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Brands we have worked</Link></li>
+                <li><Link href="/#brands" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Brands we have worked</Link></li>
                 <li><a href="#testimonials" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Testimonials</a></li>
                 <li><a href="#pricing" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Pricing Structure</a></li>
                 <li><a href="https://www.unstoppableindia.net/post/how-evoc-labs-scaled-a-brand-from-32-lakhs-month-to-1-crore-month-in-just-30-days" target="_blank" rel="noopener noreferrer" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Blogs</a></li>

@@ -7,7 +7,7 @@ const brands = [1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map((i) => g
 
 export default function BrandsStrip() {
   return (
-    <div className="w-full py-12 overflow-hidden bg-transparent relative z-20">
+    <div id="brands" className="w-full py-12 overflow-hidden bg-transparent relative z-20">
       <div className="flex flex-col items-center mb-10">
         <span className="text-white/40 text-[15px] font-bold tracking-[0.3em] uppercase">
           Trusted by 100+ high-growth brands
