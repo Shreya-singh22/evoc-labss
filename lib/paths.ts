@@ -1,8 +1,29 @@
+/**
+ * Unified Path Helper for GitHub Pages Deployment
+ */
+
 const isProd = process.env.NODE_ENV === 'production';
-const basePath = isProd ? '/Evoc-Labs' : '';
+const REPO_NAME = '/Evoc-Labs';
 
 export function getPath(path: string) {
-  if (path.startsWith('http')) return path;
+  if (!path) return '';
+  
+  // Handle absolute URLs
+  if (path.startsWith('http') || path.startsWith('//')) {
+    return path;
+  }
+
+  // Normalize path to start with /
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;
-  return `${basePath}${normalizedPath}`;
+
+  // In production, prefix with REPO_NAME
+  // In development, return as is (localhost:3000/path)
+  if (isProd) {
+    if (normalizedPath.startsWith(REPO_NAME)) {
+      return normalizedPath;
+    }
+    return `${REPO_NAME}${normalizedPath}`;
+  }
+
+  return normalizedPath;
 }

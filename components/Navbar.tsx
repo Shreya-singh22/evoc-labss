@@ -35,7 +35,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between max-w-[1440px] mx-auto relative">
           {/* Left: Logo mark */}
           <div className="flex-1">
-            <Link href="/" aria-label="Home" className="inline-block hover:opacity-80 transition-opacity outline-none focus:outline-none">
+            <Link href={getPath('/')} aria-label="Home" className="inline-block hover:opacity-80 transition-opacity outline-none focus:outline-none">
               <img
                 src={getPath('/logo.png')}
                 alt="Logo"
@@ -65,7 +65,7 @@ export default function Navbar() {
               {['Home', 'Offering', 'About', 'Pricing', 'Blog'].map((item) => (
                 <Link
                   key={item}
-                  href={item === 'Home' ? '/' : `#${item.toLowerCase()}`}
+                  href={item === 'Home' ? getPath('/') : `#${item.toLowerCase()}`}
                   className={`transition-all duration-300 text-[14px] font-medium rounded-full outline-none focus:outline-none ${
                     isScrolled 
                       ? 'px-4 py-1.5 text-white/50 hover:text-white hover:bg-white/5' 
@@ -140,7 +140,7 @@ export default function Navbar() {
                   transition={{ delay: i * 0.1 }}
                 >
                   <Link
-                    href={item === 'Home' ? '/' : `#${item.toLowerCase()}`}
+                    href={item === 'Home' ? getPath('/') : `#${item.toLowerCase()}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="text-4xl font-bold text-white/50 hover:text-white transition-colors flex items-center gap-4"
                     style={{ fontFamily: 'var(--font-instrument)' }}
