@@ -50,18 +50,103 @@ const SocialLinks = [
   }
 ];
 
+const testimonials = [
+  {
+    name: "Style Elevates",
+    role: "Founder, Fashion D2C Brand",
+    content: "Before EVOC Labs, we were juggling multiple tools for ads, store management and recovery. Their platform brought everything into one place and our conversion rate improved noticeably within weeks."
+  },
+  {
+    name: "Pistachious Bracelets",
+    role: "Co-Founder, Skincare Brand",
+    content: "Working with EVOC Labs felt like adding a growth team to our business. Their AI automations and checkout optimizations helped us scale profitably."
+  },
+  {
+    name: "Avikanha",
+    role: "Owner, Consumer Gadgets Brand",
+    content: "We saw a major difference in how we manage ads and operations after moving to EVOC Labs. Having sales, logistics and performance data on one dashboard changed our decision-making."
+  },
+  {
+    name: "Moonstruck appliances",
+    role: "Founder, Jewelry Brand",
+    content: "What impressed us most was the WhatsApp recovery automation and AI calling integrations. We started recovering abandoned orders at a scale we couldn’t manage manually."
+  },
+  {
+    name: "Kickdock",
+    role: "Director, Homeware Brand",
+    content: "EVOC Labs didn’t just give us software, they gave us a growth system. From store optimization to retention automations, everything was built for scaling."
+  },
+  {
+    name: "Ratvia Jewellers",
+    role: "Founder, Multi-Channel Brand",
+    content: "We’ve worked with multiple agencies before, but EVOC Labs feels more like a tech growth partner. Their software replaced all the cash burning."
+  }
+];
+
 export default function FooterSection() {
   return (
     <footer className="relative w-full overflow-hidden bg-[#030303]">
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1000px] h-[800px] bg-[#183EEB]/10 rounded-full blur-[150px] pointer-events-none z-0" />
       
+      {/* ─── SECTION 1: CTA & TESTIMONIALS ─── */}
       <div className="max-w-7xl mx-auto px-6 pt-24 pb-6 relative z-10">
-        <div className="flex flex-col items-center text-center">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          {/* Left Column (Testimonials) - 7 columns */}
+          <div className="xl:col-span-7 flex flex-col gap-8">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3 tracking-tight">Trusted by <span className="text-[#183EEB] italic font-serif">forward-thinking</span> brands</h2>
+              <p className="text-white/40 text-sm md:text-base max-w-md font-medium">Join 100+ brands that are scaling their e-commerce operations with EVOC Labs.</p>
+            </motion.div>
+            
+            <div className="relative mt-4 group">
+              {/* Fade overlays */}
+              <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#030303] to-transparent z-10" />
+              <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#030303] to-transparent z-10" />
+              
+              <div className="flex overflow-hidden">
+                <motion.div 
+                  className="flex gap-4 py-4"
+                  animate={{ x: ["0%", "-50%"] }}
+                  transition={{ 
+                    x: {
+                      repeat: Infinity,
+                      repeatType: "loop",
+                      duration: 40,
+                      ease: "linear"
+                    }
+                  }}
+                  whileHover={{ transition: { duration: 80 } }} // Slow down on hover
+                >
+                  {[...testimonials, ...testimonials].map((t, i) => (
+                    <div 
+                      key={i}
+                      className="w-[300px] md:w-[380px] shrink-0 bg-white/[0.02] border border-white/[0.05] hover:border-[#183EEB]/30 rounded-2xl p-6 flex flex-col gap-4 transition-all duration-500"
+                    >
+                      <p className="text-white/70 text-[13px] leading-relaxed flex-1 font-medium italic">
+                        &quot;{t.content}&quot;
+                      </p>
+                      <div className="flex flex-col pt-2 border-t border-white/5">
+                        <p className="text-white text-[14px] font-bold">{t.name}</p>
+                        <p className="text-[#183EEB] text-[10px] uppercase font-bold tracking-widest">{t.role}</p>
+                      </div>
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column (CTA Card) - 5 columns */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="w-full max-w-2xl rounded-3xl p-10 md:p-12 border border-[#183EEB]/20 flex flex-col relative z-30 overflow-hidden"
+            className="xl:col-span-5 w-full rounded-3xl p-10 md:p-12 border border-[#183EEB]/20 flex flex-col relative z-30 overflow-hidden shadow-[0_0_80px_rgba(24,62,235,0.1)]"
             style={{
               background: 'radial-gradient(circle at top right, rgba(24,62,235,0.15), rgba(15,23,42,1))'
             }}
@@ -71,11 +156,11 @@ export default function FooterSection() {
             <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight relative z-10">
               Ready to Scale?
             </h3>
-            <p className="text-white/60 text-lg md:text-xl mb-10 max-w-sm mx-auto leading-relaxed relative z-10">
+            <p className="text-white/60 text-lg md:text-xl mb-10 leading-relaxed relative z-10">
               Experience the AI-powered commerce operating system in action.
             </p>
             
-            <Link href={getPath('/demo')} className="w-full relative z-10">
+            <Link href={getPath('/demo')} className="block w-full relative z-10">
               <motion.div 
                 whileHover={{ scale: 1.02, boxShadow: "0 0 40px rgba(24,62,235,0.4)" }}
                 whileTap={{ scale: 0.98 }}
@@ -91,6 +176,7 @@ export default function FooterSection() {
               Secure & Confidential
             </div>
           </motion.div>
+
         </div>
       </div>
 

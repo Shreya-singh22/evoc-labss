@@ -60,8 +60,8 @@ export default function Home() {
       {/* Impact We Create Section */}
       <ImpactSection />
 
-      {/* Reviews / Testimonials Section */}
-      <ReviewsSection />
+      {/* Reviews / Testimonials Section (Moved to Footer) */}
+      {/* <ReviewsSection /> */}
 
       {/* Featured On Section */}
       <FeaturedOn />
