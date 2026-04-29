@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { getPath } from '@/lib/paths';
 
-const brands = Array.from({ length: 17 }, (_, i) => getPath(`/brands/brand-${i + 1}.png`));
+const brands = [1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map((i) => getPath(`/brands/brand-${i}.png`));
 
 export default function BrandsStrip() {
   return (
