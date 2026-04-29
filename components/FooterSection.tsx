@@ -218,17 +218,21 @@ export default function FooterSection() {
             <div>
               <h4 className="text-[14px] font-bold uppercase tracking-[0.1em] mb-[22px]" style={{ color: 'rgba(255,255,255,0.55)' }}>EVOC LABS</h4>
               <ul className="space-y-[14px]">
-                <li><Link href="/brands" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Brands</Link></li>
+                <li><Link href="/brands" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Brands we have worked</Link></li>
                 <li><a href="#testimonials" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Testimonials</a></li>
-                <li><a href="#pricing" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Pricing</a></li>
+                <li><a href="#pricing" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Pricing Structure</a></li>
+                <li><a href="#" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Blogs</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="text-[14px] font-bold uppercase tracking-[0.1em] mb-[22px]" style={{ color: 'rgba(255,255,255,0.55)' }}>COMPANY</h4>
               <ul className="space-y-[14px]">
-                <li><a href="#" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Home</a></li>
+                <li><Link href="/" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Home</Link></li>
                 <li><a href="#" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">About Us</a></li>
+                <li><a href="#" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Career</a></li>
+                <li><a href="#" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Contact Us</a></li>
+                <li><a href="https://app.evoclabs.com/" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Login</a></li>
               </ul>
             </div>
 
