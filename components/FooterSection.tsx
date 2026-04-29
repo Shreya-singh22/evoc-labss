@@ -155,7 +155,7 @@ export default function FooterSection() {
             
             <div className="relative z-10 mb-8 text-center">
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 tracking-tight">
-                Book a free demo
+                Book a Free Demo
               </h3>
               <p className="text-white/60 text-sm">
                 Fill in your details and we&apos;ll reach out shortly.
