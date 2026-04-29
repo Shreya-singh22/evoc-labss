@@ -99,11 +99,13 @@ export default function PricingSection() {
           <PriceItem icon={<MarketingIcon />} price="₹0" label="No Marketing Charges" delay={0.3} />
         </div>
         
-        {/* Row 2 — 2 items */}
-        <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24 lg:gap-32">
+        {/* Row 2 — 3 items */}
+        <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-0 max-w-full mx-auto">
           <PriceItem icon={<ShieldIcon />} price="₹0" label="No Charges on RTO" delay={0.4} />
           <Divider />
-          <PriceItem icon={<PercentIcon />} price="4%" label="Commission on delivered orders" delay={0.5} />
+          <PriceItem icon={<ShieldIcon />} price="₹0" label="No Charges on RTO" delay={0.5} />
+          <Divider />
+          <PriceItem icon={<PercentIcon />} price="4%" label="Commission on delivered orders" delay={0.6} />
         </div>
       </div>
     </section>
