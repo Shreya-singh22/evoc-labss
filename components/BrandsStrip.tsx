@@ -9,7 +9,7 @@ export default function BrandsStrip() {
   return (
     <div className="w-full py-12 overflow-hidden bg-transparent relative z-20">
       <div className="flex flex-col items-center mb-10">
-        <span className="text-white/40 text-[13px] font-bold tracking-[0.3em] uppercase">
+        <span className="text-white/40 text-[15px] font-bold tracking-[0.3em] uppercase">
           Trusted by 100+ high-growth brands
         </span>
       </div>
