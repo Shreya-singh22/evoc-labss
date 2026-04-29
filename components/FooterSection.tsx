@@ -90,7 +90,7 @@ export default function FooterSection({ hideCTA = false }: { hideCTA?: boolean }
       
       {/* ─── SECTION 1: CTA & TESTIMONIALS ─── */}
       {!hideCTA && (
-        <div className="max-w-7xl mx-auto px-6 pt-24 pb-6 relative z-10">
+        <div id="testimonials" className="max-w-7xl mx-auto px-6 pt-24 pb-6 relative z-10">
           <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 lg:gap-16 items-start">
             
             {/* Left Column (Testimonials) - 7 columns */}
