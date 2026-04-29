@@ -61,6 +61,14 @@ const Divider = () => (
   <div className="hidden md:block w-[1px] h-12 bg-white/10 mx-8 lg:mx-14" />
 );
 
+const PercentIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#183EEB]">
+    <line x1="19" x2="5" y1="5" y2="19" />
+    <circle cx="6.5" cy="6.5" r="2.5" />
+    <circle cx="17.5" cy="17.5" r="2.5" />
+  </svg>
+);
+
 export default function PricingSection() {
   return (
     <section className="bg-black pt-0 pb-32 px-6 overflow-hidden">
@@ -95,7 +103,7 @@ export default function PricingSection() {
         <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24 lg:gap-32">
           <PriceItem icon={<ShieldIcon />} price="₹0" label="No Charges on RTO" delay={0.4} />
           <Divider />
-          <PriceItem icon={<ShieldIcon />} price="₹0" label="No Charges on RTO" delay={0.5} />
+          <PriceItem icon={<PercentIcon />} price="4%" label="Commission on delivered orders" delay={0.5} />
         </div>
       </div>
     </section>
