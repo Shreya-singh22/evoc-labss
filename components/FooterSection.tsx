@@ -229,9 +229,9 @@ export default function FooterSection() {
               <h4 className="text-[14px] font-bold uppercase tracking-[0.1em] mb-[22px]" style={{ color: 'rgba(255,255,255,0.55)' }}>COMPANY</h4>
               <ul className="space-y-[14px]">
                 <li><Link href="/" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Home</Link></li>
-                <li><a href="#" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">About Us</a></li>
-                <li><a href="#" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Career</a></li>
-                <li><a href="#" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Contact Us</a></li>
+                <li><Link href="/about" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">About Us</Link></li>
+                <li><Link href="/careers" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Career</Link></li>
+                <li><a href="mailto:contact@evoclabs.com" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Contact Us</a></li>
                 <li><a href="https://app.evoclabs.com/" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Login</a></li>
               </ul>
             </div>
