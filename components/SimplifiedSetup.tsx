@@ -204,11 +204,11 @@ export default function SimplifiedSetup() {
         </div>
 
         {/* Scaled-down animated text path - Significantly smaller and tighter */}
-        <div className="mt-8 mb-0 flex justify-center overflow-hidden opacity-[0.1]">
+        <div className="mt-16 mb-4 flex justify-center overflow-hidden opacity-[0.35]">
            <motion.div 
               animate={{ x: [0, -1000] }}
               transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-              className="whitespace-nowrap text-[14px] md:text-[1.1vw] font-serif italic text-white/50 tracking-[0.15em] font-light"
+              className="whitespace-nowrap text-[16px] md:text-[1.2vw] font-serif italic text-white/70 tracking-[0.2em] font-light"
            >
               Imagination is your cap ✦ Create indefinite possibilities ✦ Scaling simplified ✦ Automation native ✦ Imagination is your cap ✦ Create indefinite possibilities ✦ Scaling simplified ✦ Automation native ✦
            </motion.div>
