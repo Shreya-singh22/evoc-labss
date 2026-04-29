@@ -130,7 +130,9 @@ export default function AboutPage() {
                 className="p-8 bg-white/[0.02] border border-white/5 rounded-[32px] hover:bg-white/[0.04] hover:border-blue-500/30 transition-all duration-500 shadow-xl group"
               >
                 <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/20 group-hover:bg-blue-500 group-hover:text-white transition-all duration-500">
-                  {React.cloneElement(item.icon as React.ReactElement, { className: 'w-6 h-6 transition-colors group-hover:text-white' })}
+                  <div className="text-blue-500 group-hover:text-white transition-colors">
+                    {item.icon}
+                  </div>
                 </div>
                 <h3 className="text-xl font-bold mb-3">{item.title}</h3>
                 <p className="text-white/40 text-sm leading-relaxed font-medium">{item.desc}</p>
