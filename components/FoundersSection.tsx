@@ -117,7 +117,7 @@ export default function FoundersSection() {
             role="co-founder and CTO"
             image={getPath('/images/founders/piyush.jpg')}
             linkedin="https://www.linkedin.com/in/piyussshhh/"
-            twitter="https://x.com/piyushrathore"
+            twitter="https://x.com/PIYUSH22052006"
           />
         </div>
       </div>
