@@ -35,7 +35,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between max-w-[1440px] mx-auto relative">
           {/* Left: Logo mark */}
           <div className="flex-1">
-            <Link href={getPath('/')} aria-label="Home" className="inline-block hover:opacity-80 transition-opacity outline-none focus:outline-none">
+            <Link href="/" aria-label="Home" className="inline-block hover:opacity-80 transition-opacity outline-none focus:outline-none">
               <img
                 src={getPath('/logo.png')}
                 alt="Logo"

@@ -1,8 +1,11 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig: NextConfig = {
   output: 'export',
-  // Manual path handling for GitHub Pages sub-directory
+  basePath: isProd ? '/evoc-labss' : '',
+  assetPrefix: isProd ? '/evoc-labss/' : '',
   trailingSlash: true,
   images: {
     unoptimized: true,

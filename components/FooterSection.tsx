@@ -160,7 +160,7 @@ export default function FooterSection() {
               Experience the AI-powered commerce operating system in action.
             </p>
             
-            <Link href={getPath('/demo')} className="block w-full relative z-10">
+            <Link href="/demo" className="block w-full relative z-10">
               <motion.div 
                 whileHover={{ scale: 1.02, boxShadow: "0 0 40px rgba(24,62,235,0.4)" }}
                 whileTap={{ scale: 0.98 }}
@@ -218,7 +218,7 @@ export default function FooterSection() {
             <div>
               <h4 className="text-[14px] font-bold uppercase tracking-[0.1em] mb-[22px]" style={{ color: 'rgba(255,255,255,0.55)' }}>EVOC LABS</h4>
               <ul className="space-y-[14px]">
-                <li><Link href={getPath('/brands')} className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Brands</Link></li>
+                <li><Link href="/brands" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Brands</Link></li>
                 <li><a href="#testimonials" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Testimonials</a></li>
                 <li><a href="#pricing" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Pricing</a></li>
               </ul>
@@ -235,8 +235,8 @@ export default function FooterSection() {
             <div>
               <h4 className="text-[14px] font-bold uppercase tracking-[0.1em] mb-[22px]" style={{ color: 'rgba(255,255,255,0.55)' }}>LEGALITIES</h4>
               <ul className="space-y-[14px]">
-                <li><Link href={getPath('/privacy')} className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Privacy Policy</Link></li>
-                <li><Link href={getPath('/terms')} className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Terms of Service</Link></li>
+                <li><Link href="/privacy" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Privacy Policy</Link></li>
+                <li><Link href="/terms" className="text-[15px] text-white hover:text-[#183EEB] transition-colors">Terms of Service</Link></li>
               </ul>
             </div>
           </div>
@@ -248,8 +248,8 @@ export default function FooterSection() {
             &copy; 2026 All rights reserved. Evoc Technologies Pvt. Ltd.
           </p>
           <div className="flex gap-6 text-[13px] text-white/30">
-            <Link href={getPath('/privacy')} className="hover:text-white transition-colors">Privacy</Link>
-            <Link href={getPath('/terms')} className="hover:text-white transition-colors">Terms</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
           </div>
         </div>
       </div>

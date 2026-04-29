@@ -112,7 +112,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex flex-col items-center gap-12 relative z-50"
         >
-          <Link href={getPath('/demo')}>
+          <Link href="/demo">
             <button className="group flex items-center gap-3.5 bg-white/[0.03] backdrop-blur-md border border-white/[0.15] hover:border-blue-500/50 px-8 py-3 rounded-[14px] text-white text-[15px] transition-all hover:bg-white/[0.06] shadow-[0_0_20px_rgba(37,99,235,0.2)] hover:shadow-[0_0_35px_rgba(37,99,235,0.45)]">
               <span className="font-medium tracking-tight">Book a Free Demo</span>
               <span className="text-white/60 group-hover:translate-x-0.5 transition-transform">→</span>
