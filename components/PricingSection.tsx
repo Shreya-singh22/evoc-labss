@@ -85,27 +85,30 @@ export default function PricingSection() {
           No upfront cost, only <em className="font-serif italic text-[#183EEB]">success</em> based fees
         </motion.h2>
         
-        {/* Row 1 — 3 items */}
-        <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-0 max-w-full mx-auto mb-20 md:mb-24">
-          <PriceItem icon={<StoreIcon />} price="₹0" label="Subscription fees" delay={0.1} />
-          <Divider />
-          <PriceItem 
-            icon={<WebIcon />} 
-            price="₹0" 
-            label={<>Website Setup & Maintenance Cost</>} 
-            delay={0.2}
-          />
-          <Divider />
-          <PriceItem icon={<MarketingIcon />} price="₹0" label="No Marketing Charges" delay={0.3} />
-        </div>
-        
-        {/* Row 2 — 3 items */}
-        <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-0 max-w-full mx-auto">
-          <PriceItem icon={<ShieldIcon />} price="₹0" label="No Charges on RTO" delay={0.4} />
-          <Divider />
-          <PriceItem icon={<ShieldIcon />} price="₹0" label="No Charges on RTO" delay={0.5} />
-          <Divider />
-          <PriceItem icon={<PercentIcon />} price="4%" label="Commission on delivered orders" delay={0.6} />
+        {/* Success Fees Grid */}
+        <div className="space-y-20 md:space-y-24">
+          {/* Row 1 — 3 items */}
+          <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-0 max-w-full mx-auto">
+            <PriceItem icon={<StoreIcon />} price="₹0" label="Subscription fees" delay={0.1} />
+            <Divider />
+            <PriceItem 
+              icon={<WebIcon />} 
+              price="₹0" 
+              label={<>Website Setup & Maintenance Cost</>} 
+              delay={0.2}
+            />
+            <Divider />
+            <PriceItem icon={<MarketingIcon />} price="₹0" label="No Marketing Charges" delay={0.3} />
+          </div>
+          
+          {/* Row 2 — 3 items */}
+          <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-0 max-w-full mx-auto">
+            <PriceItem icon={<ShieldIcon />} price="₹0" label="No Charges on RTO" delay={0.4} />
+            <Divider />
+            <PriceItem icon={<ShieldIcon />} price="₹0" label="No Charges on RTO" delay={0.5} />
+            <Divider />
+            <PriceItem icon={<PercentIcon />} price="4%" label="Commission on delivered orders" delay={0.6} />
+          </div>
         </div>
       </div>
     </section>
