@@ -77,10 +77,10 @@ export default function CareersPage() {
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]">About <span className="text-blue-500">Evoc Labs</span></h1>
               <div className="space-y-4 text-white/50 text-base md:text-lg leading-relaxed max-w-xl">
                  <p>
-                    Evoc Labs is a B2B SaaS platform built for eCommerce sellers in India. Our goal is to create a unified ecosystem where merchants can manage their entire online business from a single dashboard.
+                    EVOC Labs is an AI-powered full-stack commerce platform helping eCommerce and D2C brands build, operate, and scale from a single dashboard. 
                  </p>
                  <p>
-                    From store creation and ad tracking to logistics and analytics, we eliminate fragmented tools and simplify how modern brands scale online profitably.
+                    We unify store infrastructure, sales and ads analytics, checkout optimization, logistics intelligence, AI calling agents, abandoned cart recovery, and growth automation into one ecosystem.
                  </p>
               </div>
            </motion.div>

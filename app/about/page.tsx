@@ -56,8 +56,8 @@ export default function AboutPage() {
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1]">
               The Operating System for <span className="text-blue-500">D2C Success.</span>
             </h1>
-            <p className="text-white/40 text-base md:text-lg leading-relaxed font-medium max-w-xl">
-              We're building a unified ecosystem for Indian eCommerce—eliminating fragmented tools and simplifying how modern brands scale online.
+            <p className="text-white/40 text-base md:text-lg leading-relaxed font-medium max-w-2xl">
+              EVOC Labs is an AI-powered full-stack commerce platform helping eCommerce and D2C brands build, operate, and scale from a single dashboard.
             </p>
           </motion.div>
         </div>
@@ -68,10 +68,10 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Our <span className="text-blue-500">Story</span></h2>
               <div className="space-y-4 text-white/50 text-sm md:text-base leading-relaxed max-w-lg">
                 <p>
-                  Evoc Labs was born out of a simple observation: modern eCommerce sellers are overwhelmed by fragmented tools. One for the store, another for ads, a third for logistics, and a dozen more for analytics.
+                  We unify store infrastructure, sales and ads analytics, checkout optimization, logistics intelligence, AI calling agents, abandoned cart recovery, and growth automation into one ecosystem.
                 </p>
                 <p>
-                  We built Evoc Labs to be the unified dashboard where merchants can manage their entire online business with zero guesswork.
+                  Our goal is to eliminate fragmented tools and simplify how modern brands manage their entire online business with zero guesswork.
                 </p>
               </div>
               <div className="pt-6 grid grid-cols-2 gap-8">
@@ -90,7 +90,7 @@ export default function AboutPage() {
               <Target className="w-10 h-10 text-blue-500 mb-6" />
               <h3 className="text-2xl font-bold mb-4 italic font-serif">The Mission</h3>
               <p className="text-white/40 text-sm leading-relaxed">
-                 To empower the next generation of D2C giants by merging high-end aesthetics with data-driven performance technology.
+                 To simplify commerce operations, improve conversions, reduce inefficiencies, and help brands grow profitably through AI-driven solutions. EVOC Labs is building the operating system for modern commerce.
               </p>
            </div>
         </div>
