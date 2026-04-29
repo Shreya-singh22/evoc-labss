@@ -8,6 +8,7 @@ import SimplifiedSetup from '@/components/SimplifiedSetup';
 import PricingSection from '@/components/PricingSection';
 import OrdersStatSection from '@/components/OrdersStatSection';
 import ImpactSection from '@/components/ImpactSection';
+import ReviewsSection from '@/components/ReviewsSection';
 import FeaturedOn from '@/components/FeaturedOn';
 import FoundersSection from '@/components/FoundersSection';
 import FooterSection from '@/components/FooterSection';
@@ -58,6 +59,9 @@ export default function Home() {
 
       {/* Impact We Create Section */}
       <ImpactSection />
+
+      {/* Reviews / Testimonials Section */}
+      <ReviewsSection />
 
       {/* Featured On Section */}
       <FeaturedOn />
