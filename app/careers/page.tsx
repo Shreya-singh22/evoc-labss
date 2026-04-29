@@ -3,12 +3,15 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Code2, Rocket, Users, Target, ShieldCheck, Mail, Briefcase, Sparkles, MapPin, Clock, ChevronDown, ChevronUp } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Code2, Rocket, Users, Target, ShieldCheck, Mail, Briefcase, Sparkles, MapPin, Clock, ChevronDown, ChevronUp, SearchX } from 'lucide-react';
 import { getPath } from '@/lib/paths';
 import FooterSection from '@/components/FooterSection';
 
 export default function CareersPage() {
   const [isApplying, setIsApplying] = useState(false);
+  const [activeFilter, setActiveFilter] = useState('All Positions');
+
+  const filters = ['All Positions', 'Tech', 'Marketing', 'Design'];
 
   const whyWorkItems = [
     {
@@ -27,6 +30,20 @@ export default function CareersPage() {
       desc: "Build with Next.js, React, Node.js, and AI integrations. We stay on the bleeding edge of performance."
     }
   ];
+
+  const positions = [
+    {
+      title: "Full Stack Developer Internship",
+      category: "Tech",
+      location: "Remote",
+      duration: "4 Months",
+      type: "Internship (Unpaid)"
+    }
+  ];
+
+  const filteredPositions = activeFilter === 'All Positions' 
+    ? positions 
+    : positions.filter(p => p.category === activeFilter);
 
   return (
     <main className="bg-[#030303] min-h-screen text-white selection:bg-blue-600/30 font-sans pb-20">
@@ -49,7 +66,7 @@ export default function CareersPage() {
           <div className="text-white/20 text-[10px] font-bold uppercase tracking-[0.3em]">Careers at Evoc Labs</div>
         </div>
 
-        {/* 1. About Evoc Section - At the top */}
+        {/* 1. About Evoc Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-32 items-center">
            <motion.div 
              initial={{ opacity: 0, x: -20 }}
@@ -105,102 +122,142 @@ export default function CareersPage() {
           ))}
         </div>
 
-        {/* 3. Open Positions - Focused & Expanding */}
-        <div id="open-positions" className="mb-40">
+        {/* 3. Open Positions - Interactive & Expanding */}
+        <div id="open-positions" className="mb-40 min-h-[400px]">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">Open <span className="text-blue-500">Positions</span></h2>
-            <div className="flex justify-center gap-6 mt-4 text-white/20 text-[10px] font-bold uppercase tracking-[0.2em]">
-               <span className="text-blue-500 underline underline-offset-8">All Positions</span>
-               <span>Tech</span>
-               <span>Marketing</span>
-               <span>Design</span>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">Open <span className="text-blue-500">Positions</span></h2>
+            <div className="flex justify-center flex-wrap gap-x-8 gap-y-4 text-white/20 text-[10px] font-bold uppercase tracking-[0.2em]">
+               {filters.map((filter) => (
+                 <button 
+                  key={filter}
+                  onClick={() => {
+                    setActiveFilter(filter);
+                    setIsApplying(false);
+                  }}
+                  className={`relative pb-2 transition-all duration-300 hover:text-white/60 ${activeFilter === filter ? 'text-blue-500' : ''}`}
+                 >
+                   {filter}
+                   {activeFilter === filter && (
+                     <motion.div 
+                       layoutId="filter-underline"
+                       className="absolute bottom-0 left-0 w-full h-[2px] bg-blue-500"
+                     />
+                   )}
+                 </button>
+               ))}
             </div>
           </div>
           
-          <div className="max-w-4xl mx-auto space-y-6">
-            <motion.div 
-              layout
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className={`bg-white/[0.03] border border-white/10 rounded-[32px] overflow-hidden transition-all duration-500 ${isApplying ? 'bg-white/[0.05] border-blue-500/30 shadow-[0_20px_80px_rgba(24,62,235,0.1)]' : 'hover:bg-white/[0.05]'}`}
-            >
-              <div className="p-8 md:p-10">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                  <div className="space-y-3">
-                    <h3 className="text-xl md:text-2xl font-bold">Full Stack Developer Internship</h3>
-                    <div className="flex flex-wrap items-center gap-4 text-white/30 text-[11px] font-bold uppercase tracking-widest">
-                      <span>Remote</span>
-                      <span className="w-1 h-1 rounded-full bg-white/20" />
-                      <span>4 Months</span>
-                      <span className="w-1 h-1 rounded-full bg-white/20" />
-                      <span>Internship (Unpaid)</span>
-                    </div>
-                  </div>
-                  
-                  <button 
-                    type="button"
-                    onClick={() => setIsApplying(!isApplying)}
-                    className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl transition-all text-sm font-bold group shadow-lg shadow-blue-600/20"
-                  >
-                    {isApplying ? 'Close' : 'Apply Now'}
-                    {isApplying ? <ChevronUp className="w-4 h-4" /> : <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
-                  </button>
-                </div>
-
-                <AnimatePresence initial={false}>
-                  {isApplying && (
-                    <motion.div
-                      key="application-form"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          <div className="max-w-4xl mx-auto">
+            <AnimatePresence mode="wait">
+              {filteredPositions.length > 0 ? (
+                <motion.div 
+                  key="positions-list"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="space-y-6"
+                >
+                  {filteredPositions.map((pos, idx) => (
+                    <motion.div 
+                      key={idx}
+                      layout
+                      className={`bg-white/[0.03] border border-white/10 rounded-[32px] overflow-hidden transition-all duration-500 ${isApplying ? 'bg-white/[0.05] border-blue-500/30 shadow-[0_20px_80px_rgba(24,62,235,0.1)]' : 'hover:bg-white/[0.05]'}`}
                     >
-                      <div className="mt-12 pt-12 border-t border-white/5">
-                        <div className="mb-10">
-                          <h4 className="text-xl font-bold mb-2">Apply for this role</h4>
-                          <p className="text-white/30 text-xs leading-relaxed font-medium">Your application is saved securely. We don't print applicant data to the console.</p>
-                        </div>
-
-                        <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={(e) => e.preventDefault()}>
-                          <div className="space-y-2">
-                             <label className="text-white/60 text-xs font-bold uppercase tracking-widest ml-1">Full name *</label>
-                             <input type="text" required placeholder="Your name" className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 text-sm focus:border-blue-500/50 outline-none transition-all" />
-                          </div>
-                          <div className="space-y-2">
-                             <label className="text-white/60 text-xs font-bold uppercase tracking-widest ml-1">Email *</label>
-                             <input type="email" required placeholder="you@email.com" className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 text-sm focus:border-blue-500/50 outline-none transition-all" />
-                          </div>
-                          <div className="space-y-2">
-                             <label className="text-white/60 text-xs font-bold uppercase tracking-widest ml-1">GitHub *</label>
-                             <input type="url" required placeholder="https://github.com/username" className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 text-sm focus:border-blue-500/50 outline-none transition-all" />
-                          </div>
-                          <div className="space-y-2">
-                             <label className="text-white/60 text-xs font-bold uppercase tracking-widest ml-1">Portfolio *</label>
-                             <input type="url" required placeholder="https://your-portfolio.com" className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 text-sm focus:border-blue-500/50 outline-none transition-all" />
-                          </div>
-                          <div className="space-y-2">
-                             <label className="text-white/60 text-xs font-bold uppercase tracking-widest ml-1">Resume link *</label>
-                             <input type="url" required placeholder="Drive / Notion / PDF link" className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 text-sm focus:border-blue-500/50 outline-none transition-all" />
-                          </div>
-                          <div className="space-y-2">
-                             <label className="text-white/60 text-xs font-bold uppercase tracking-widest ml-1">Next.js project links *</label>
-                             <input type="text" required placeholder="Comma-separated links" className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 text-sm focus:border-blue-500/50 outline-none transition-all" />
+                      <div className="p-8 md:p-10">
+                        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                          <div className="space-y-3">
+                            <h3 className="text-xl md:text-2xl font-bold">{pos.title}</h3>
+                            <div className="flex flex-wrap items-center gap-4 text-white/30 text-[11px] font-bold uppercase tracking-widest">
+                              <span>{pos.location}</span>
+                              <span className="w-1 h-1 rounded-full bg-white/20" />
+                              <span>{pos.duration}</span>
+                              <span className="w-1 h-1 rounded-full bg-white/20" />
+                              <span>{pos.type}</span>
+                            </div>
                           </div>
                           
-                          <div className="md:col-span-2 pt-4">
-                            <button type="submit" className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-2xl transition-all shadow-xl shadow-blue-600/10 active:scale-[0.98]">
-                               Submit Application
-                            </button>
-                          </div>
-                        </form>
+                          <button 
+                            type="button"
+                            onClick={() => setIsApplying(!isApplying)}
+                            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl transition-all text-sm font-bold group shadow-lg shadow-blue-600/20"
+                          >
+                            {isApplying ? 'Close' : 'Apply Now'}
+                            {isApplying ? <ChevronUp className="w-4 h-4" /> : <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+                          </button>
+                        </div>
+
+                        <AnimatePresence initial={false}>
+                          {isApplying && (
+                            <motion.div
+                              key="application-form"
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                            >
+                              <div className="mt-12 pt-12 border-t border-white/5">
+                                <div className="mb-10">
+                                  <h4 className="text-xl font-bold mb-2">Apply for this role</h4>
+                                  <p className="text-white/30 text-xs leading-relaxed font-medium">Your application is saved securely. We don't print applicant data to the console.</p>
+                                </div>
+
+                                <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={(e) => e.preventDefault()}>
+                                  <div className="space-y-2">
+                                     <label className="text-white/60 text-xs font-bold uppercase tracking-widest ml-1">Full name *</label>
+                                     <input type="text" required placeholder="Your name" className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 text-sm focus:border-blue-500/50 outline-none transition-all" />
+                                  </div>
+                                  <div className="space-y-2">
+                                     <label className="text-white/60 text-xs font-bold uppercase tracking-widest ml-1">Email *</label>
+                                     <input type="email" required placeholder="you@email.com" className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 text-sm focus:border-blue-500/50 outline-none transition-all" />
+                                  </div>
+                                  <div className="space-y-2">
+                                     <label className="text-white/60 text-xs font-bold uppercase tracking-widest ml-1">GitHub *</label>
+                                     <input type="url" required placeholder="https://github.com/username" className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 text-sm focus:border-blue-500/50 outline-none transition-all" />
+                                  </div>
+                                  <div className="space-y-2">
+                                     <label className="text-white/60 text-xs font-bold uppercase tracking-widest ml-1">Portfolio *</label>
+                                     <input type="url" required placeholder="https://your-portfolio.com" className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 text-sm focus:border-blue-500/50 outline-none transition-all" />
+                                  </div>
+                                  <div className="space-y-2">
+                                     <label className="text-white/60 text-xs font-bold uppercase tracking-widest ml-1">Resume link *</label>
+                                     <input type="url" required placeholder="Drive / Notion / PDF link" className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 text-sm focus:border-blue-500/50 outline-none transition-all" />
+                                  </div>
+                                  <div className="space-y-2">
+                                     <label className="text-white/60 text-xs font-bold uppercase tracking-widest ml-1">Next.js project links *</label>
+                                     <input type="text" required placeholder="Comma-separated links" className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 text-sm focus:border-blue-500/50 outline-none transition-all" />
+                                  </div>
+                                  
+                                  <div className="md:col-span-2 pt-4">
+                                    <button type="submit" className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-2xl transition-all shadow-xl shadow-blue-600/10 active:scale-[0.98]">
+                                       Submit Application
+                                    </button>
+                                  </div>
+                                </form>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
                     </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </motion.div>
+                  ))}
+                </motion.div>
+              ) : (
+                <motion.div 
+                  key="no-positions"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  className="bg-white/[0.02] border border-white/5 rounded-[40px] py-32 flex flex-col items-center justify-center text-center"
+                >
+                  <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-6">
+                    <SearchX className="w-8 h-8 text-white/20" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2">No openings currently</h3>
+                  <p className="text-white/30 text-sm max-w-xs">We don't have any open roles in {activeFilter} at the moment, but we're always looking for talent.</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
 
