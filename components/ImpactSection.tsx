@@ -51,7 +51,7 @@ const ImpactCard = ({ title, subtitle, className = "", align = "left", delay = 0
 
 export default function ImpactSection() {
   return (
-    <section className="bg-black py-16 px-6 -mt-32 relative z-30">
+    <section id="impact" className="bg-black py-16 px-6 -mt-32 relative z-30">
       <div className="max-w-4xl mx-auto">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}

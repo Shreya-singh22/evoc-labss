@@ -64,7 +64,15 @@ export default function Navbar() {
             >
               {['Home', 'Offering', 'About', 'Pricing', 'Blog'].map((item) => {
                 const isBlog = item === 'Blog';
-                const href = item === 'Home' ? getPath('/') : (isBlog ? 'https://www.unstoppableindia.net/post/how-evoc-labs-scaled-a-brand-from-32-lakhs-month-to-1-crore-month-in-just-30-days' : `#${item.toLowerCase()}`);
+                const isAbout = item === 'About';
+                const isPricing = item === 'Pricing';
+                const isHome = item === 'Home';
+                
+                let href = `#${item.toLowerCase()}`;
+                if (isHome) href = '/';
+                if (isAbout) href = '/about';
+                if (isPricing) href = '/#impact';
+                if (isBlog) href = 'https://www.unstoppableindia.net/post/how-evoc-labs-scaled-a-brand-from-32-lakhs-month-to-1-crore-month-in-just-30-days';
                 
                 return (
                   <Link
@@ -141,7 +149,15 @@ export default function Navbar() {
             <div className="flex flex-col gap-8">
               {['Home', 'Offering', 'About', 'Pricing', 'Blog'].map((item, i) => {
                 const isBlog = item === 'Blog';
-                const href = item === 'Home' ? getPath('/') : (isBlog ? 'https://www.unstoppableindia.net/post/how-evoc-labs-scaled-a-brand-from-32-lakhs-month-to-1-crore-month-in-just-30-days' : `#${item.toLowerCase()}`);
+                const isAbout = item === 'About';
+                const isPricing = item === 'Pricing';
+                const isHome = item === 'Home';
+                
+                let href = `#${item.toLowerCase()}`;
+                if (isHome) href = '/';
+                if (isAbout) href = '/about';
+                if (isPricing) href = '/#impact';
+                if (isBlog) href = 'https://www.unstoppableindia.net/post/how-evoc-labs-scaled-a-brand-from-32-lakhs-month-to-1-crore-month-in-just-30-days';
                 
                 return (
                   <motion.div
